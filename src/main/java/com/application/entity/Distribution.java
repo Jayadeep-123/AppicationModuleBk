@@ -1,5 +1,7 @@
 package com.application.entity;
 
+import java.time.LocalDate;
+
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -35,10 +37,10 @@ public class Distribution {
     private District district;
 
     @Column(name = "app_start_no")
-    private String appStartNo;
+    private int appStartNo;
 
     @Column(name = "app_end_no")
-    private String appEndNo;
+    private int appEndNo;
 
     @Column(name = "total_app_count")
     private int totalAppCount;
@@ -62,4 +64,7 @@ public class Distribution {
     @ManyToOne
     @JoinColumn(name = "zone_id")
     private Zone zone;
+    
+    @Column(name = "created_date")
+    private LocalDate issueDate;
 }
